@@ -123,15 +123,16 @@
     background-repeat: no-repeat;
     border: none;
     cursor: pointer;
-    overflow: auto;
+    overflow: hidden;
     outline: none;
     opacity: 1;
-    background-color: rgba(120, 52, 165, 0.6);
+    background-color: #5B3151;
     border-radius: 20px;
     left: 37%; /*Find another way to center it*/
     width: 60px;
     height: 20px;
     transition: all 0.5s ease;
+    text-align: center;
     
     /* width: 90%;
     height: 90%; */
@@ -164,32 +165,44 @@
 
 .back .content.appear{
     width: 90%;
-    height: 400px;
     left: 50%;
+    height: 270px;
     margin-left: -50%;
 
 }
 
 .text-button {
-
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
     animation: fadein 500ms forwards;
 
 }
 
+/* .text-button::after {
+    content: 'button';
+
+} */
+
 .text-content {
-    margin-top: -5%;
     animation: fadeout 0.2s forwards;
     opacity: 0;
     z-index: 10;
 }
 
+.text-content h4 {
+    margin-top: -1%;
+    color: #EDD6B5;
+}
+
 .text-content.appear-text {
     
     animation: fadein 1s forwards;
-    animation-delay: 400ms;
+    animation-delay: 300ms;
     opacity: 0;
 }
 
 .text-button.disappear-text {
-    animation: fadeout 500ms forwards;
+    animation: fadeout 200ms forwards;
 }

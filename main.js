@@ -60,8 +60,6 @@ function checkOpen() {
         }
     })
 
-    
-
     return open;
 
 }
@@ -97,9 +95,9 @@ async function shuffle(first_run) {
     // If it's not the first run (reload), flip all the cards to the front-cover before shuffling the card
     if (first_run){
         checkOpen();
-        await sleep(100);
+        await sleep(200);
     }
-
+        
     /* Add fancy shuffling animation uwu */
     let card1 = document.getElementById(1);
     let card2 = document.getElementById(2);
@@ -111,10 +109,16 @@ async function shuffle(first_run) {
 
     shuffle_animation(card1, card2, card3);
 
-    
-    let image = document.querySelectorAll('.back-cover');
-    let image_list = ['src/ace sword.jpg', 'src/Shaman of Swords.jpeg', 'src/7w.jpg', 'src/discs_daughter.gif', 'src/6 d.jpeg', 'src/7c.jpg', 'src/cups_8.gif', 'src/wands_daughter.gif', 'src/swords_9.gif', 'src/wands_9.gif', 'src/wands_son.gif', 'src/wands_8.gif', 'src/swords_8.gif', 'src/cups_9.gif', 'src/7d.jpg', 'src/7s.jpg', 'src/swords_shaman.gif', 'src/discs_9.gif', 'src/Shaman of Wands.jpeg', 'src/Daughter of Wands.jpeg', 'src/6 w.jpeg', 'src/ace c.jpg', 'src/wands_10.gif', 'src/discs_priestess.gif', 'src/priestess of swords.png', 'src/discs_8.gif', 'src/cups_10.gif', 'src/10d.jpg', 'src/cups_priestess.gif', 'src/10s.jpg', 'src/2 sword.jpg', 'src/ace w.jpg', 'src/Son of Swords.jpg', 'src/Daughter of Cups.jpeg', 'src/Son of Cups.jpeg', 'src/ace d.jpg', 'src/Priestess of Wands.jpeg', 'src/10w.jpg', 'src/wands_ace.gif', 'src/6 c.jpeg', 'src/swords_priestess.gif', 'src/Son of Wands.jpeg', 'src/10c.jpg', 'src/wands_priestess.gif', 'src/3c.jpg', 'src/2 w.jpg', 'src/Priestess of Wands.jpg', 'src/Priestess of Discs.jpeg', 'src/3w.jpg', 'src/discs_3.gif', 'src/Son of Discs.jpeg', 'src/cups_shaman.gif', 'src/cups_ace.gif', 'src/discs_2.gif', 'src/swords_daughter.gif', 'src/discs_6.gif', 'src/wands_shaman.gif', 'src/Daughter of Discs.jpeg', 'src/Shaman of Discs.jpeg', 'src/swords_ace.gif', 'src/discs_7.gif', 'src/3d.jpg', 'src/Shaman of Cups.jpeg', 'src/discs_5.gif', 'src/discs_son.gif', 'src/2 d-1.jpg', 'src/discs_10.gif', 'src/discs_4.gif', 'src/2c.jpg', 'src/4s.jpg', 'src/5w.jpg', 'src/4d.jpg', 'src/cups_7.gif', 'src/cups_son.gif', 'src/9c.jpg', 'src/swords_6.gif', 'src/swords_10.gif', 'src/wands_6.gif', 'src/wands_7.gif', 'src/cups_daughter.gif', 'src/swords_7.gif', 'src/cups_6.gif', 'src/5c.jpg', 'src/cups_4.gif', 'src/9w.jpg', 'src/8s.jpg', 'src/8d.jpg', 'src/swords_5.gif', 'src/wands_5.gif', 'src/6 s.jpeg', 'src/wands_4.gif', 'src/swords_4.gif', 'src/cups_5.gif', 'src/3 s.jpg', 'src/discs_shaman.gif', 'src/discs_ace.gif', 'src/8w.jpg', 'src/9s.jpg', 'src/9d.jpg', 'src/4c.jpg', 'src/cups_2.gif', 'src/swords_3.gif', 'src/Daughter of Swords.jpeg', 'src/wands_3.gif', 'src/wands_2.gif', 'src/swords_son.gif', 'src/swords_2.gif', 'src/8c.jpg', 'src/5s.jpg', 'src/4w.jpg', 'src/5d.jpg', 'src/cups_3.gif']
+    // const promise = new Promise((resolve, reject) => {
+
+    // });
+
+    const image = document.querySelectorAll('.back-cover');
+    const text_content = [document.getElementById('text1-content'), document.getElementById('text2-content'), document.getElementById('text3-content')];
+    const image_list = ['src/ace sword.jpg', 'src/Shaman of Swords.jpeg', 'src/7w.jpg', 'src/discs_daughter.gif', 'src/6 d.jpeg', 'src/7c.jpg', 'src/cups_8.gif', 'src/wands_daughter.gif', 'src/swords_9.gif', 'src/wands_9.gif', 'src/wands_son.gif', 'src/wands_8.gif', 'src/swords_8.gif', 'src/cups_9.gif', 'src/7d.jpg', 'src/7s.jpg', 'src/swords_shaman.gif', 'src/discs_9.gif', 'src/Shaman of Wands.jpeg', 'src/Daughter of Wands.jpeg', 'src/6 w.jpeg', 'src/ace c.jpg', 'src/wands_10.gif', 'src/discs_priestess.gif', 'src/priestess of swords.png', 'src/discs_8.gif', 'src/cups_10.gif', 'src/10d.jpg', 'src/cups_priestess.gif', 'src/10s.jpg', 'src/2 sword.jpg', 'src/ace w.jpg', 'src/Son of Swords.jpg', 'src/Daughter of Cups.jpeg', 'src/Son of Cups.jpeg', 'src/ace d.jpg', 'src/Priestess of Wands.jpeg', 'src/10w.jpg', 'src/wands_ace.gif', 'src/6 c.jpeg', 'src/swords_priestess.gif', 'src/Son of Wands.jpeg', 'src/10c.jpg', 'src/wands_priestess.gif', 'src/3c.jpg', 'src/2 w.jpg', 'src/Priestess of Wands.jpg', 'src/Priestess of Discs.jpeg', 'src/3w.jpg', 'src/discs_3.gif', 'src/Son of Discs.jpeg', 'src/cups_shaman.gif', 'src/cups_ace.gif', 'src/discs_2.gif', 'src/swords_daughter.gif', 'src/discs_6.gif', 'src/wands_shaman.gif', 'src/Daughter of Discs.jpeg', 'src/Shaman of Discs.jpeg', 'src/swords_ace.gif', 'src/discs_7.gif', 'src/3d.jpg', 'src/Shaman of Cups.jpeg', 'src/discs_5.gif', 'src/discs_son.gif', 'src/2 d-1.jpg', 'src/discs_10.gif', 'src/discs_4.gif', 'src/2c.jpg', 'src/4s.jpg', 'src/5w.jpg', 'src/4d.jpg', 'src/cups_7.gif', 'src/cups_son.gif', 'src/9c.jpg', 'src/swords_6.gif', 'src/swords_10.gif', 'src/wands_6.gif', 'src/wands_7.gif', 'src/cups_daughter.gif', 'src/swords_7.gif', 'src/cups_6.gif', 'src/5c.jpg', 'src/cups_4.gif', 'src/9w.jpg', 'src/8s.jpg', 'src/8d.jpg', 'src/swords_5.gif', 'src/wands_5.gif', 'src/6 s.jpeg', 'src/wands_4.gif', 'src/swords_4.gif', 'src/cups_5.gif', 'src/3 s.jpg', 'src/discs_shaman.gif', 'src/discs_ace.gif', 'src/8w.jpg', 'src/9s.jpg', 'src/9d.jpg', 'src/4c.jpg', 'src/cups_2.gif', 'src/swords_3.gif', 'src/Daughter of Swords.jpeg', 'src/wands_3.gif', 'src/wands_2.gif', 'src/swords_son.gif', 'src/swords_2.gif', 'src/8c.jpg', 'src/5s.jpg', 'src/4w.jpg', 'src/5d.jpg', 'src/cups_3.gif'];
+    const content_list = ['src/ace sword.jpg', 'src/Shaman of Swords.jpeg', 'src/7w.jpg', 'src/discs_daughter.gif', 'src/6 d.jpeg', 'src/7c.jpg', 'src/cups_8.gif', 'src/wands_daughter.gif', 'src/swords_9.gif', 'src/wands_9.gif', 'src/wands_son.gif', 'src/wands_8.gif', 'src/swords_8.gif', 'src/cups_9.gif', 'src/7d.jpg', 'src/7s.jpg', 'src/swords_shaman.gif', 'src/discs_9.gif', 'src/Shaman of Wands.jpeg', 'src/Daughter of Wands.jpeg', 'src/6 w.jpeg', 'src/ace c.jpg', 'src/wands_10.gif', 'src/discs_priestess.gif', 'src/priestess of swords.png', 'src/discs_8.gif', 'src/cups_10.gif', 'src/10d.jpg', 'src/cups_priestess.gif', 'src/10s.jpg', 'src/2 sword.jpg', 'src/ace w.jpg', 'src/Son of Swords.jpg', 'src/Daughter of Cups.jpeg', 'src/Son of Cups.jpeg', 'src/ace d.jpg', 'src/Priestess of Wands.jpeg', 'src/10w.jpg', 'src/wands_ace.gif', 'src/6 c.jpeg', 'src/swords_priestess.gif', 'src/Son of Wands.jpeg', 'src/10c.jpg', 'src/wands_priestess.gif', 'src/3c.jpg', 'src/2 w.jpg', 'src/Priestess of Wands.jpg', 'src/Priestess of Discs.jpeg', 'src/3w.jpg', 'src/discs_3.gif', 'src/Son of Discs.jpeg', 'src/cups_shaman.gif', 'src/cups_ace.gif', 'src/discs_2.gif', 'src/swords_daughter.gif', 'src/discs_6.gif', 'src/wands_shaman.gif', 'src/Daughter of Discs.jpeg', 'src/Shaman of Discs.jpeg', 'src/swords_ace.gif', 'src/discs_7.gif', 'src/3d.jpg', 'src/Shaman of Cups.jpeg', 'src/discs_5.gif', 'src/discs_son.gif', 'src/2 d-1.jpg', 'src/discs_10.gif', 'src/discs_4.gif', 'src/2c.jpg', 'src/4s.jpg', 'src/5w.jpg', 'src/4d.jpg', 'src/cups_7.gif', 'src/cups_son.gif', 'src/9c.jpg', 'src/swords_6.gif', 'src/swords_10.gif', 'src/wands_6.gif', 'src/wands_7.gif', 'src/cups_daughter.gif', 'src/swords_7.gif', 'src/cups_6.gif', 'src/5c.jpg', 'src/cups_4.gif', 'src/9w.jpg', 'src/8s.jpg', 'src/8d.jpg', 'src/swords_5.gif', 'src/wands_5.gif', 'src/6 s.jpeg', 'src/wands_4.gif', 'src/swords_4.gif', 'src/cups_5.gif', 'src/3 s.jpg', 'src/discs_shaman.gif', 'src/discs_ace.gif', 'src/8w.jpg', 'src/9s.jpg', 'src/9d.jpg', 'src/4c.jpg', 'src/cups_2.gif', 'src/swords_3.gif', 'src/Daughter of Swords.jpeg', 'src/wands_3.gif', 'src/wands_2.gif', 'src/swords_son.gif', 'src/swords_2.gif', 'src/8c.jpg', 'src/5s.jpg', 'src/4w.jpg', 'src/5d.jpg', 'src/cups_3.gif'];
     let chosen_index = [] 
+    let iter = 0;
 
     image.forEach(img => {
         let random = Math.floor(Math.random() * image_list.length);
@@ -126,17 +130,18 @@ async function shuffle(first_run) {
 
         chosen_index.push(random);
         img.src = image_list[random];
+    
+        text_content[iter].innerHTML = "<h4>Title</h4>" + content_list[random];
+        
+        iter++;
     })
 
-    
-    
-    
 }
 
 /* Randomize the card whenever the user just entered or reload the page */
 window.onload = function() {
     shuffle(false);
-  };
+};
 
 
 /*
