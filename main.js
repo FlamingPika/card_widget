@@ -1,20 +1,24 @@
-/* The function to make all the cards flippable */
-// const cards = document.querySelectorAll('.cards')
+const lorem = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, porro eius doloremque distinctio pariatur quo! Porro, optio provident? Totam ipsam quae deleniti, expedita sequi culpa. Quam officia harum magnam aperiam.";
 
-// cards.forEach(card => card.addEventListener('click', function () {
-//     card.classList.toggle('is-flipped');
-// }));
+/* The function to make all the cards flippable */
+const cards = document.querySelectorAll('.cards')
+
+cards.forEach(card => card.addEventListener('click', function () {
+    console.log("pressed");
+    card.classList.toggle('is-flipped');
+}));
+
 
 /* A function to show/unshow the description of each card */
-function show_desc(id) {
+function show_desc(id, id_text, id_content) {
     const content = document.getElementById(id);
-    console.log(content.className);
-    if (content.className == "content" || content.className == "content disappear") {
-        content.classList.toggle('appear');
-    }
-    else {
-        content.classList.toggle('disappear');
-    }
+    const text = document.getElementById(id_text);
+    const text_content = document.getElementById(id_content);
+    event.stopPropagation();
+    content.classList.toggle('appear');
+    text.classList.toggle('disappear-text');
+    text_content.classList.toggle('appear-text');
+
 }
 
 /* A function to delay the action of another function */
@@ -24,9 +28,30 @@ function sleep(ms) {
 
 /* Check whether there is an opened card or not. Return true if there exists at least one opened card */
 function checkOpen() {
-    let cards = document.querySelectorAll('.cards');
-    let contents = document.querySelectorAll('.content')
+    const cards = document.querySelectorAll('.cards');
+    const contents = document.querySelectorAll('.content')
+    const text_buttons = document.querySelectorAll('.text-button');
+    const text_contents = document.querySelectorAll('.text-content')
     let open = false;
+
+    // Reset the text before flipping
+    text_buttons.forEach(text => {
+        if (text.className == 'text-button disappear-text') {
+            text.classList.toggle('disappear-text');
+        }
+    })
+    text_contents.forEach(text => {
+        if (text.className == 'text-content appear-text') {
+            text.classList.toggle('appear-text');
+        }
+    })
+
+    // Close all the content before flipping
+    contents.forEach(content => {
+        if (content.className == 'content appear') {
+            content.classList.toggle('appear');
+        }
+    })
 
     cards.forEach(card => {
         if (card.className == 'cards is-flipped') {
@@ -35,22 +60,17 @@ function checkOpen() {
         }
     })
 
-    // Close all the content before flipping
-    contents.forEach(content => {
-        if (content.className == 'content appear') {
-            content.classList.toggle('disappear');
-        }
-    })
+    
 
     return open;
 
 }
 
-/* Flip the card once to see the back of the card */
-function flip_one(id) {
-    let card = document.getElementById(id);
-    card.classList.toggle('is-flipped');
-}
+/* Flip the card once to see the back of the card => put it on class: front*/
+// function flip_one(id) {
+//     let card = document.getElementById(id);
+//     card.classList.toggle('is-flipped');
+// }
 
 /* Flip all exisiting cards */
 function flip() {

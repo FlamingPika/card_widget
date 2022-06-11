@@ -9,6 +9,11 @@
 <body>
     <div class="container">
 
+    <div class="button-canvas">
+        <button onclick="shuffle(true)" style="top: 50%; left: 50%;">Shuffle</button>
+        <button onclick="flip()" style="top: 50%; left: 50%;">Flip</button>
+    </div>
+
     <div class="canvas">
         
     <div class="card-container">
@@ -16,16 +21,17 @@
         <div class="cards" id="1">
 
 
-            <div class="front" onclick="flip_one(1)">
+            <div class="front">
                 <img src="src/front/motherpeace-image.jpeg" class="front-cover"/>
             </div>
 
-            <div class="back" onclick="show_desc('content1')">
+            <div class="back">
                 <img src="src/front/motherpeace-image.jpeg" class="back-cover"/>
-                <div class="content" id="content1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, assumenda nisi! Distinctio quidem quas eos numquam exercitationem eligendi minima temporibus! Alias sapiente neque iste, adipisci recusandae aut est minus asperiores!</div>
+                <div class="content" id="content1" onclick="show_desc('content1', 'text1-button', 'text1-content')">
+                    <div class="text-button" id="text1-button">button</div>
+                    <div class="text-content" id="text1-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio quis aliquid dignissimos, autem et illo sapiente. Quibusdam sit odit optio modi a? Vel ipsum maxime minima reprehenderit laborum beatae dolores?</div>
+                </div>
             </div>
-
-            
 
         </div>
 
@@ -35,13 +41,17 @@
         
         <div class="cards" id="2">
 
-            <div class="front" onclick="flip_one(2)">
+            <div class="front">
                 <img src="src/front/motherpeace-image.jpeg" class="front-cover"/>
             </div>
 
-            <div class="back" onclick="show_desc('content2')">
+            <div class="back">
                 <img src="src/front/motherpeace-image.jpeg" class="back-cover"/>
-                <div class="content" id="content2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate exercitationem inventore sequi eius reprehenderit ipsam quisquam, perferendis sunt quo molestiae ut vero quibusdam, eveniet quod repellendus repellat, facilis ipsa dolore?</div>
+                <div class="content" id="content2" onclick="show_desc('content2','text2-button', 'text2-content')">
+                    <div class="text-button" id="text2-button">button</div>
+                    <div class="text-content" id="text2-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio quis aliquid dignissimos, autem et illo sapiente. Quibusdam sit odit optio modi a? Vel ipsum maxime minima reprehenderit laborum beatae dolores?</div>
+                </div>
+                
             </div>
 
         </div>
@@ -52,24 +62,22 @@
         
         <div class="cards" id="3">
 
-            <div class="front" onclick="flip_one(3)">
+            <div class="front">
                 <img src="src/front/motherpeace-image.jpeg" class="front-cover"/>
             </div>
 
-            <div class="back" onclick="show_desc('content3')">
+            <div class="back">
                 <img src="src/front/motherpeace-image.jpeg" class="back-cover"/>
-                <div class="content" id="content3">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptate, inventore facilis. At nulla rem ullam. Vero autem quas animi, hic officia magni quam accusantium unde harum eius laudantium nesciunt neque!</div>
+                <div class="content" id="content3" onclick="show_desc('content3', 'text3-button', 'text3-content')">
+                    <div class="text-button" id="text3-button">button</div>
+                    <div class="text-content" id="text3-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio quis aliquid dignissimos, autem et illo sapiente. Quibusdam sit odit optio modi a? Vel ipsum maxime minima reprehenderit laborum beatae dolores?</div>
+                </div>
             </div>
 
         </div>
 
     </div>
 
-    </div>
-
-    <div class="button-canvas">
-        <button onclick="shuffle(true)" style="top: 50%; left: 50%;">Shuffle</button>
-        <button onclick="flip()" style="top: 50%; left: 50%;">Flip</button>
     </div>
 
     </div>
