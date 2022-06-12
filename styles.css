@@ -1,3 +1,7 @@
+body {
+    background-color: #F7EFE2;
+}
+
 .container {
     place-items: center;
     display: flex;
@@ -17,7 +21,13 @@
 }
 
 .button-canvas button {
+    background-color: #DAB074;
+    color: white;
+    border-radius: 5px;
+    border: none;
     margin: 10px;
+    padding: 5px;
+    cursor: pointer;
 }
 
 .canvas {
@@ -56,10 +66,6 @@
 
 }
 
-/* .cards:hover{
-    transform: scale(1.05);
-} */
-
 .cards.is-shuffled1 {
     transform: translateX(115%) rotateZ(-7deg);
 }
@@ -79,6 +85,7 @@
 
 .front {
     position: absolute;
+    background-color: #5B3151;
     width: 100%;
     height: 100%;
     backface-visibility: hidden;
@@ -101,13 +108,13 @@
 
 .back {
     position: relative;
-    background-color: white;
+    background-color: #5B3151;
     width: 100%;
     height: 100%;
     backface-visibility: hidden;
     transform: rotateY(180deg);
     text-align: center;
-    font-family: 'zilla slab', sans-serif;
+    font-family: 'Quicksand';
     border-radius: 20px;
     font-size: 18px;
     color: white;
@@ -123,23 +130,16 @@
     background-repeat: no-repeat;
     border: none;
     cursor: pointer;
-    overflow: hidden;
+    overflow: auto;
     outline: none;
-    opacity: 1;
     background-color: #5B3151;
     border-radius: 20px;
-    left: 37%; /*Find another way to center it*/
-    width: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
     height: 20px;
     transition: all 0.5s ease;
     text-align: center;
-    
-    /* width: 90%;
-    height: 90%; */
-    /* top: 50%;
-    left: 50%; 
-     margin-left: -50%;
-    margin-top: -50%; */
     padding: 5%;
 
 }
@@ -153,21 +153,9 @@
     100% { opacity: 0;}
 }
 
-/* .content p.appear {
-    animation: fadeout 1s forwards;
-}
-
-.content p.appear {
-    animation: fadeout 1s forwards;
-} */
-
-
-
 .back .content.appear{
     width: 90%;
-    left: 50%;
-    height: 270px;
-    margin-left: -50%;
+    height: 300px;
 
 }
 
@@ -180,19 +168,20 @@
 
 }
 
-/* .text-button::after {
-    content: 'button';
-
-} */
-
 .text-content {
     animation: fadeout 0.2s forwards;
     opacity: 0;
     z-index: 10;
+
+}
+
+.text-content p {
+    font-family: 'Quicksand';
 }
 
 .text-content h4 {
     margin-top: -1%;
+    font-family: 'Quicksand';
     color: #EDD6B5;
 }
 
