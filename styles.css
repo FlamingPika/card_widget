@@ -10,7 +10,6 @@ body {
     padding: 70px;
     text-align: center;
     width: 80%;
-
 }
 
 .button-canvas {
@@ -51,7 +50,6 @@ body {
 
 .card-container:hover {
     transform: scale(1.05);
-    
 }
 
 .cards {
@@ -63,7 +61,6 @@ body {
     cursor: pointer;
     box-shadow: 0px 3px 18px 3px rgba(0, 0 ,0, 0.2);
     border-radius: 20px;
-
 }
 
 .cards.is-shuffled1 {
@@ -118,7 +115,6 @@ body {
     border-radius: 20px;
     font-size: 18px;
     color: white;
-
 }
 
 .back img {
@@ -141,7 +137,6 @@ body {
     transition: all 0.5s ease;
     text-align: center;
     padding: 5%;
-
 }
 
 @keyframes fadein {
@@ -156,7 +151,6 @@ body {
 .back .content.appear{
     width: 90%;
     height: 300px;
-
 }
 
 .text-button {
@@ -165,14 +159,12 @@ body {
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
     animation: fadein 500ms forwards;
-
 }
 
 .text-content {
     animation: fadeout 0.2s forwards;
     opacity: 0;
     z-index: 10;
-
 }
 
 .text-content p {
@@ -186,7 +178,6 @@ body {
 }
 
 .text-content.appear-text {
-    
     animation: fadein 1s forwards;
     animation-delay: 300ms;
     opacity: 0;

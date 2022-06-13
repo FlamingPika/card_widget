@@ -6,7 +6,6 @@ cards.forEach(card => card.addEventListener('click', function () {
     card.classList.toggle('is-flipped');
 }));
 
-
 /* A function to show/unshow the description of each card */
 function show_desc(id, id_text, id_content) {
     event.stopPropagation();
