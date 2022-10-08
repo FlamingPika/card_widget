@@ -1,3 +1,7 @@
+body {
+    background-color: #F7EFE2;
+}
+
 .container {
     place-items: center;
     display: flex;
@@ -6,7 +10,6 @@
     padding: 70px;
     text-align: center;
     width: 80%;
-
 }
 
 .button-canvas {
@@ -17,7 +20,13 @@
 }
 
 .button-canvas button {
+    background-color: #DAB074;
+    color: white;
+    border-radius: 5px;
+    border: none;
     margin: 10px;
+    padding: 5px;
+    cursor: pointer;
 }
 
 .canvas {
@@ -41,7 +50,6 @@
 
 .card-container:hover {
     transform: scale(1.05);
-    
 }
 
 .cards {
@@ -53,12 +61,7 @@
     cursor: pointer;
     box-shadow: 0px 3px 18px 3px rgba(0, 0 ,0, 0.2);
     border-radius: 20px;
-
 }
-
-/* .cards:hover{
-    transform: scale(1.05);
-} */
 
 .cards.is-shuffled1 {
     transform: translateX(115%) rotateZ(-7deg);
@@ -79,6 +82,7 @@
 
 .front {
     position: absolute;
+    background-color: #5B3151;
     width: 100%;
     height: 100%;
     backface-visibility: hidden;
@@ -101,17 +105,20 @@
 
 .back {
     position: relative;
-    background-color: white;
+    background-color: #5B3151;
     width: 100%;
     height: 100%;
     backface-visibility: hidden;
     transform: rotateY(180deg);
     text-align: center;
-    font-family: 'zilla slab', sans-serif;
+    font-family: 'Quicksand';
     border-radius: 20px;
     font-size: 18px;
     color: white;
+}
 
+.back img {
+    margin-bottom: 10px;
 }
 
 .back .content {
@@ -121,17 +128,15 @@
     cursor: pointer;
     overflow: auto;
     outline: none;
-    opacity: 0;
-    background-color: rgba(120, 52, 165, 0.6);
+    background-color: #5B3151;
     border-radius: 20px;
-    top: 50%;
     left: 50%;
-    width: 90%;
-    height: 90%;
-    margin-left: -50%;
-    margin-top: -50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 20px;
+    transition: all 0.5s ease;
+    text-align: center;
     padding: 5%;
-
 }
 
 @keyframes fadein {
@@ -143,15 +148,41 @@
     100% { opacity: 0;}
 }
 
-
 .back .content.appear{
-    transition: all 0.5s ease;
-    transform: translate(0, -20px);
-    animation: fadein 1s forwards;
+    width: 90%;
+    height: 300px;
 }
 
-.back .content.disappear{
-    transition: all 0.5s ease;
-    transform: translate(0, 0);
-    animation: fadeout 1s forwards;
+.text-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    animation: fadein 500ms forwards;
+}
+
+.text-content {
+    animation: fadeout 0.2s forwards;
+    opacity: 0;
+    z-index: 10;
+}
+
+.text-content p {
+    font-family: 'Quicksand';
+}
+
+.text-content h4 {
+    margin-top: -1%;
+    font-family: 'Quicksand';
+    color: #EDD6B5;
+}
+
+.text-content.appear-text {
+    animation: fadein 1s forwards;
+    animation-delay: 300ms;
+    opacity: 0;
+}
+
+.text-button.disappear-text {
+    animation: fadeout 200ms forwards;
 }
