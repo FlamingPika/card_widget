@@ -20,13 +20,27 @@ body {
 }
 
 .button-canvas button {
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 600;
+
+    appearance: none;
+    background: none;
+    outline: none;
+    border: none;
+
     background-color: #DAB074;
     color: white;
-    border-radius: 5px;
-    border: none;
-    margin: 10px;
-    padding: 5px;
-    cursor: pointer;
+
+}
+
+.button-canvas button:hover {
+    transition: 0.2s;
+    color: #DAB074;
+    background-color: white;
 }
 
 .canvas {
