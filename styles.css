@@ -165,6 +165,19 @@ body {
     height: 300px;
 }
 
+.title-font {
+    font-family: 'Inknut Antiqua', Libre Baskerville, sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.description-font {
+    font-family: 'Quicksand', Poppins, sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+}
+
 .text-button {
     position: absolute;
     top: 50%;
@@ -179,13 +192,8 @@ body {
     z-index: 10;
 }
 
-.text-content p {
-    font-family: 'Quicksand';
-}
-
-.text-content h4 {
+.text-content h2 {
     margin-top: -1%;
-    font-family: 'Quicksand';
     color: #EDD6B5;
 }
 

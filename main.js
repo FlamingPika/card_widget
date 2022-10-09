@@ -104,7 +104,7 @@ function change_image() {
         chosen_index.push(random);
         img.src = image_list[random];
     
-        text_content[iter].innerHTML = "<h4>Title</h4>" + content_list[random];
+        text_content[iter].innerHTML = "<h2 class='title-font' style='font-size: 20px;'>Title</h2>" + content_list[random];
         
         iter++;
     });
