@@ -138,7 +138,7 @@ body {
     background-repeat: no-repeat;
     border: none;
     cursor: pointer;
-    overflow: hidden; /* auto */
+    overflow: hidden;
     outline: none;
     background-color: #5B3151;
     border-radius: 20px;
@@ -161,8 +161,9 @@ body {
 }
 
 .back .content.appear{
+    overflow: auto;
     width: 90%;
-    height: 30px; /* 200px */
+    height: 200px;
 }
 
 .title-font {
