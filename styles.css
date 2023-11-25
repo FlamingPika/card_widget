@@ -71,20 +71,8 @@ body {
     transform-style: preserve-3d;
     transition: all 0.5s ease;
     cursor: pointer;
-    box-shadow: 0px 3px 18px 3px rgba(0, 0 ,0, 0.2);
+    box-shadow: 0px 3px 18px 3px rgba(0, 0, 0, 0.2);
     border-radius: 20px;
-}
-
-.cards.is-shuffled1 {
-    transform: translateX(115%) rotateZ(-7deg);
-}
-
-.cards.is-shuffled2 {
-    transform: translateX(0%) rotateZ(5deg);
-}
-
-.cards.is-shuffled3 {
-    transform: translateX(-115%) rotateZ(-2deg);
 }
 
 .cards.is-flipped {
@@ -152,15 +140,26 @@ body {
 }
 
 @keyframes fadein {
-    0% { opacity: 0;}
-    100% { opacity: 1;}
-}
-@keyframes fadeout {
-    0% { opacity: 1;}
-    100% { opacity: 0;}
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
 
-.back .content.appear{
+@keyframes fadeout {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.back .content.appear {
     overflow: auto;
     width: 90%;
     height: 200px;
@@ -206,4 +205,93 @@ body {
 
 .text-button.disappear-text {
     animation: fadeout 200ms forwards;
+}
+
+
+/* AbdulAhmad Matin Changes */
+.ravenstarreading.container {
+    padding: 0;
+    margin: 3vw auto 5.1vw auto;
+    width: 75%;
+}
+
+.ravenstarreading .card-container {
+    width: 33%;
+    height: auto;
+}
+
+@media (min-width: 1025px) {
+    .cards.is-shuffled1 {
+        transform: translateX(115%) rotateZ(-7deg);
+    }
+
+    .cards.is-shuffled2 {
+        transform: translateX(0%) rotateZ(5deg);
+    }
+
+    .cards.is-shuffled3 {
+        transform: translateX(-115%) rotateZ(-2deg);
+    }
+}
+
+@media (max-width: 1024px) {
+    .cards.is-shuffled1 {
+        transform: rotateZ(-11deg);
+    }
+    
+    .cards.is-shuffled2 {
+        transform: rotateZ(11deg);
+    }
+    
+    .cards.is-shuffled3 {
+        transform: rotateZ(-11deg);
+    }
+
+    .ravenstarreading .canvas {
+        display: initial;
+        max-width: 100%;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .ravenstarreading .card-container {
+        height: auto;
+        width: 44%;
+        flex: 0 0 auto;
+        margin-left: 3%;
+        margin-right: 3%;
+    }
+}
+
+@media (max-width: 768px) {
+    .ravenstarreading .canvas {
+        display: initial;
+        max-width: 100%;
+    }
+
+    .ravenstarreading .card-container {
+        width: 100%;
+        max-width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        margin-bottom: 110px;
+    }
+
+    .ravenstarreading .cards,
+    .ravenstarreading .front,
+    .ravenstarreading .front-cover {
+        height: auto;
+    }
+
+    .ravenstarreading .back .content {
+        width: 90%;
+        padding: 5%;
+        text-wrap: nowrap;
+        bottom: -70px;
+    }
+
+    .ravenstarreading .back img {
+        margin: 0;
+    }
 }
